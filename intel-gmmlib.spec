@@ -4,7 +4,7 @@
 #
 Name     : intel-gmmlib
 Version  : 18.3.0
-Release  : 1
+Release  : 2
 URL      : https://github.com/intel/gmmlib/archive/intel-gmmlib-18.3.0.tar.gz
 Source0  : https://github.com/intel/gmmlib/archive/intel-gmmlib-18.3.0.tar.gz
 Summary  : Intel(R) Graphics Memory Management Library
@@ -53,15 +53,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539202201
+export SOURCE_DATE_EPOCH=1539641928
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1539202201
+export SOURCE_DATE_EPOCH=1539641928
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/intel-gmmlib
 cp LICENSE.md %{buildroot}/usr/share/package-licenses/intel-gmmlib/LICENSE.md
@@ -174,5 +174,5 @@ popd
 /usr/lib64/libigdgmm.so.1.0.0
 
 %files license
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/package-licenses/intel-gmmlib/LICENSE.md
