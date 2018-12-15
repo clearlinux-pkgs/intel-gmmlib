@@ -4,7 +4,7 @@
 #
 Name     : intel-gmmlib
 Version  : 18.4.1
-Release  : 4
+Release  : 5
 URL      : https://github.com/intel/gmmlib/archive/intel-gmmlib-18.4.1.tar.gz
 Source0  : https://github.com/intel/gmmlib/archive/intel-gmmlib-18.4.1.tar.gz
 Summary  : Intel(R) Graphics Memory Management Library
@@ -53,7 +53,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1544884185
+export SOURCE_DATE_EPOCH=1544885757
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -61,7 +61,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1544884185
+export SOURCE_DATE_EPOCH=1544885757
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/intel-gmmlib
 cp LICENSE.md %{buildroot}/usr/share/package-licenses/intel-gmmlib/LICENSE.md
