@@ -4,7 +4,7 @@
 #
 Name     : intel-gmmlib
 Version  : 18.4.1
-Release  : 5
+Release  : 6
 URL      : https://github.com/intel/gmmlib/archive/intel-gmmlib-18.4.1.tar.gz
 Source0  : https://github.com/intel/gmmlib/archive/intel-gmmlib-18.4.1.tar.gz
 Summary  : Intel(R) Graphics Memory Management Library
