@@ -4,7 +4,7 @@
 #
 Name     : intel-gmmlib
 Version  : 21.3.5
-Release  : 36
+Release  : 37
 URL      : https://github.com/intel/gmmlib/archive/refs/tags/intel-gmmlib-21.3.5.tar.gz
 Source0  : https://github.com/intel/gmmlib/archive/refs/tags/intel-gmmlib-21.3.5.tar.gz
 Summary  : Intel(R) Graphics Memory Management Library
