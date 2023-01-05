@@ -4,7 +4,7 @@
 #
 Name     : intel-gmmlib
 Version  : 22.3.2
-Release  : 43
+Release  : 44
 URL      : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.2/gmmlib-22.3.2.tar.gz
 Source0  : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.2/gmmlib-22.3.2.tar.gz
 Summary  : Intel(R) Graphics Memory Management Library
