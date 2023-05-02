@@ -5,7 +5,7 @@
 #
 Name     : intel-gmmlib
 Version  : 22.3.5
-Release  : 47
+Release  : 48
 URL      : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.5/gmmlib-22.3.5.tar.gz
 Source0  : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.5/gmmlib-22.3.5.tar.gz
 Summary  : Intel(R) Graphics Memory Management Library
@@ -61,17 +61,17 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679505220
+export SOURCE_DATE_EPOCH=1682988244
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 %cmake ..
 make  %{?_smp_mflags}
 popd
@@ -81,10 +81,10 @@ export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz -march=x86-64-v3 "
-export FCFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz -march=x86-64-v3 "
-export FFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz -march=x86-64-v3 "
-export CXXFLAGS="$CXXFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz -march=x86-64-v3 "
+export CFLAGS="$CFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FCFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
 export CFLAGS="$CFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 export CXXFLAGS="$CXXFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 export FFLAGS="$FFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
@@ -103,7 +103,7 @@ cd ../clr-build-avx2;
 make test || :
 
 %install
-export SOURCE_DATE_EPOCH=1679505220
+export SOURCE_DATE_EPOCH=1682988244
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/intel-gmmlib
 cp %{_builddir}/gmmlib-intel-gmmlib-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/intel-gmmlib/d20436278232615063a7e8362183ec1b307addc9 || :
@@ -121,6 +121,7 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libigdgmm.so
 /usr/include/igdgmm/GmmLib/CachePolicy/GmmCachePolicyConditionals.h
 /usr/include/igdgmm/GmmLib/CachePolicy/GmmCachePolicyResourceUsageDefinitions.h
 /usr/include/igdgmm/GmmLib/CachePolicy/GmmCachePolicyUndefineConditionals.h
@@ -184,14 +185,13 @@ popd
 /usr/include/igdgmm/inc/umKmInc/sharedata.h
 /usr/include/igdgmm/util/g_gfxDebug.h
 /usr/include/igdgmm/util/gfxDebug.h
-/usr/lib64/glibc-hwcaps/x86-64-v3/libigdgmm.so
 /usr/lib64/libigdgmm.so
 /usr/lib64/pkgconfig/igdgmm.pc
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/glibc-hwcaps/x86-64-v3/libigdgmm.so.12
-/usr/lib64/glibc-hwcaps/x86-64-v3/libigdgmm.so.12.3.0
+/V3/usr/lib64/libigdgmm.so.12
+/V3/usr/lib64/libigdgmm.so.12.3.0
 /usr/lib64/libigdgmm.so.12
 /usr/lib64/libigdgmm.so.12.3.0
 
