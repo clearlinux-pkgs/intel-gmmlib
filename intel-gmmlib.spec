@@ -5,7 +5,7 @@
 #
 Name     : intel-gmmlib
 Version  : 22.3.5
-Release  : 48
+Release  : 49
 URL      : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.5/gmmlib-22.3.5.tar.gz
 Source0  : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.5/gmmlib-22.3.5.tar.gz
 Summary  : Intel(R) Graphics Memory Management Library
@@ -61,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682988244
+export SOURCE_DATE_EPOCH=1685555778
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -103,7 +103,7 @@ cd ../clr-build-avx2;
 make test || :
 
 %install
-export SOURCE_DATE_EPOCH=1682988244
+export SOURCE_DATE_EPOCH=1685555778
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/intel-gmmlib
 cp %{_builddir}/gmmlib-intel-gmmlib-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/intel-gmmlib/d20436278232615063a7e8362183ec1b307addc9 || :
@@ -121,7 +121,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libigdgmm.so
 /usr/include/igdgmm/GmmLib/CachePolicy/GmmCachePolicyConditionals.h
 /usr/include/igdgmm/GmmLib/CachePolicy/GmmCachePolicyResourceUsageDefinitions.h
 /usr/include/igdgmm/GmmLib/CachePolicy/GmmCachePolicyUndefineConditionals.h
@@ -190,7 +189,6 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libigdgmm.so.12
 /V3/usr/lib64/libigdgmm.so.12.3.0
 /usr/lib64/libigdgmm.so.12
 /usr/lib64/libigdgmm.so.12.3.0
