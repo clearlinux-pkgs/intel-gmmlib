@@ -6,10 +6,10 @@
 # autospec commit: 5424026
 #
 Name     : intel-gmmlib
-Version  : 22.5.4
-Release  : 86
-URL      : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.5.4/gmmlib-22.5.4.tar.gz
-Source0  : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.5.4/gmmlib-22.5.4.tar.gz
+Version  : 22.5.5
+Release  : 87
+URL      : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.5.5/gmmlib-22.5.5.tar.gz
+Source0  : https://github.com/intel/gmmlib/archive/intel-gmmlib-22.5.5/gmmlib-22.5.5.tar.gz
 Summary  : Intel(R) Graphics Memory Management Library
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
@@ -55,10 +55,10 @@ license components for the intel-gmmlib package.
 
 
 %prep
-%setup -q -n gmmlib-intel-gmmlib-22.5.4
-cd %{_builddir}/gmmlib-intel-gmmlib-22.5.4
+%setup -q -n gmmlib-intel-gmmlib-22.5.5
+cd %{_builddir}/gmmlib-intel-gmmlib-22.5.5
 pushd ..
-cp -a gmmlib-intel-gmmlib-22.5.4 buildavx2
+cp -a gmmlib-intel-gmmlib-22.5.5 buildavx2
 popd
 
 %build
@@ -66,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1732288246
+export SOURCE_DATE_EPOCH=1733582734
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -138,7 +138,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1732288246
+export SOURCE_DATE_EPOCH=1733582734
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/intel-gmmlib
 cp %{_builddir}/gmmlib-intel-gmmlib-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/intel-gmmlib/d20436278232615063a7e8362183ec1b307addc9 || :
